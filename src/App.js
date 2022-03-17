@@ -1,14 +1,11 @@
 import './App.css';
-import Button from './components/Buttons';
+import Container from './components/Container';
 import { ThemeProvider } from './context/ThemeContext';
-import Header from './components/Header';
 
 function App() {
   return (
     <ThemeProvider>
-      <Header/>
-      <hr/>
-      <Button />
+      <Container />
     </ThemeProvider>
 
   );
