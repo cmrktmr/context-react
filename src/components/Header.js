@@ -9,6 +9,7 @@ function Header() {
     return (
         <div>
             Active Theme:{theme}
+            <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>Change on Header</button>
         </div>
     )
 }
