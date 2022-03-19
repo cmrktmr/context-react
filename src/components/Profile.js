@@ -25,7 +25,6 @@ function Profile() {
             {!user && <button onClick={handleLogin}>{loading ? "Loading..." : "Login"}</button>}
             <code>{JSON.stringify(user)}</code>
             <br />
-
             {user && <button onClick={handleLogout}>Logout</button>}
         </div>
     )
