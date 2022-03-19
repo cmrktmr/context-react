@@ -17,10 +17,16 @@ function Profile() {
 
         }, 1500)
     }
+    const handleLogout = () => {
+        setUser(null)
+    }
     return (
         <div>
             {!user && <button onClick={handleLogin}>{loading ? "Loading..." : "Login"}</button>}
             <code>{JSON.stringify(user)}</code>
+            <br />
+
+            {user && <button onClick={handleLogout}>Logout</button>}
         </div>
     )
 }
