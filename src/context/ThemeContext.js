@@ -1,10 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState("dark")
+    const [theme, setTheme] = useState(localStorage.getItem("theme") ?? 'light')
+
+    useEffect(() => {
+        localStorage.setItem('theme', theme)
+    }, [theme])
+
     const values = { theme, setTheme }
     return <ThemeContext.Provider value={values} >{children}</ThemeContext.Provider>
 }
@@ -12,4 +17,4 @@ export const ThemeProvider = ({ children }) => {
 
 
 
-export default ThemeContext;
+export default ThemeContext; 
